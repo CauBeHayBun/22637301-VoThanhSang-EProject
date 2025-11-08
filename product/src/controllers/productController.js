@@ -110,6 +110,7 @@ class ProductController {
         }
     }
 
+
     // async getProductsById(req, res) {
     //     const { id } = req.params;
     //     const product = await Product.findById(id);
