@@ -110,15 +110,11 @@ class ProductController {
         }
     }
 
-    // async getProductById(req, res) {
-    //     const { id } = req.params; //lấy id từ tham số đường dẫn
-    //     const product = await Product.findById(id); //tìm sp theo id
+    // async getProductsById(req, res) {
+    //     const { id } = req.params;
+    //     const product = await Product.findById(id);
+    //     res.status(200).json(product);
     // }
-    async getProductsById(req, res) {
-        const { id } = req.params;
-        const product = await Product.findById(id);
-        res.status(200).json(product);
-    }
 }
 
 module.exports = ProductController;
