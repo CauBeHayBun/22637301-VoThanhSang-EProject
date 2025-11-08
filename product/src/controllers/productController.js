@@ -96,24 +96,24 @@ class ProductController {
     }
 
     async getProducts(req, res, next) {
-        try {
-            const token = req.headers.authorization;
-            if (!token) {
-                return res.status(401).json({ message: "Unauthorized" });
-            }
-            const products = await Product.find({});
+            try {
+                const token = req.headers.authorization;
+                if (!token) {
+                    return res.status(401).json({ message: "Unauthorized" });
+                }
+                const products = await Product.find({});
 
-            res.status(200).json(products);
-        } catch (error) {
-            console.error(error);
-            res.status(500).json({ message: "Server error" });
+                res.status(200).json(products);
+            } catch (error) {
+                console.error(error);
+                res.status(500).json({ message: "Server error" });
+            }
         }
-    }
-    async getProductsById(req, res) {
-        const { id } = req.params;
-        const product = await Product.findById(id);
-        res.status(200).json(product);
-    }
+        // async getProductsById(req, res) {
+        //     const { id } = req.params;
+        //     const product = await Product.findById(id);
+        //     res.status(200).json(product);
+        // }
 }
 
 module.exports = ProductController;
